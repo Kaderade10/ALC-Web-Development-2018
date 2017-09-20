@@ -1,2 +1,9 @@
-# ALC-Web-Development-2018
-A2 Class Period
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+    
+    </body>
+</html>
