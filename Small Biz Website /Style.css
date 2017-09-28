@@ -16,6 +16,9 @@ div#container{
 }
 
 header{
+        background-image: url(../images/pumpkin_banner.jpg);
+        background-position: right;
+        background-size: 1050px;
         background-color:darkorange;
         width:100;
         height:150px;
@@ -25,9 +28,15 @@ header{
 header h1 {
     text-align: center;
     padding-top:50px;
-    color:burlywood;
-    text-shadow:2px 1px 1px brown;
+    color:orange;
+    text-shadow:5px 2px 15px black;
     margin:0;
+    
+    /* font-family: 'Original Surfer', sans-serif;*/
+    font-family: 'Original Surfer', sans-serif;
+    font-family: 'Lemonada', sans-serif;
+
+    
 }
 
 nav {
@@ -88,15 +97,22 @@ img#home_img{
 }
 
 h2#h2-home{
-    float:inherit;
+    float:left;
+    margin-top: 10px;
+    margin-bottom:0;
+    font-family: 'Lemonada',sans-serif;
+
+    
 }
 
 p#p-home{
     float:left;
-    width:55.5%
+    width:56%;
+    margin-top: 10px;
 }
 
 /*about.html */
+
 img#about_img{
     width:400px;
     display:block;
@@ -106,13 +122,17 @@ img#about_img{
 }
 
 h2#h2-about{
-    float:inherit;
-  
+    float:left;
+    margin-top: 10px;
+    margin-bottom:0;
+    font-family: 'Lemonada',sans-serif;
+
 }
 
 p#p-about{
     float:left;
-    width:37%;
+    width:44.1%;
+    margin-top: 10px;
 }
 
 
