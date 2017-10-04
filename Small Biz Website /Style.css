@@ -41,9 +41,12 @@ header h1 {
 
 nav {
     width:100%;
-    background-color:#000; 
+    background-color:#764707; 
     clear:both;
     margin:0;
+    font-family:
+    font-size:14px;
+    box-shadow: 3px 3px 3px #000000;
 }
 
 
@@ -135,10 +138,37 @@ p#p-about{
     margin-top: 10px;
 }
 
+/* Produce */
 
+div#gallery{
+    width:100%;
+    border:3px dotted black;  
+}
 
+figure{
+    width:350px;
+    float:left;
+    background-color:#ffce00;
+    box-shadow:1px 1px 10px #000000;
+    background: -moz-linear-gradient(#efd19c, #764400); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#efd19c, #764400); /* Standard syntax */
+}
 
+figure img{
+    display:block;
+    width:300px;
+    height:300px;
+    margin:20px auto;
+    border:1px solid #000;
+}
 
+figure figcaption{
+    text-align:center;
+    padding-bottom:10px;
+    font-family:fantasy;
+    font-size: 18px;
+    
+}
 
 
 
