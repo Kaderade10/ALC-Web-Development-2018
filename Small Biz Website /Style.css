@@ -92,6 +92,7 @@ footer {
 }
 
 /*index.html */
+
 img#home_img{
     width:400px;
     display:block;
@@ -128,30 +129,42 @@ img#about_img{
 h2#h2-about{
     float:left;
     margin-top: 10px;
+    margin-left: 10px;
     margin-bottom:0;
     font-family: 'Lemonada',sans-serif;
+    
 
 }
 
 p#p-about{
     float:left;
-    width:44.1%;
+    width:43.36%;
     margin-top: 10px;
+    margin-left:10px;
 }
 
 /* Produce */
 
 div#gallery{
-    width:100%;
-    border:3px dotted black;  
+    width:99.5%;
+    border:3px dotted #ffffff;  
+}
+
+h2#h2-produce{
+    float:left;
+    margin-top:20px;
+    margin-left:10px;
+    margin-bottom: 20px;
+    padding-right: 920px
 }
 
 figure{
-    width:200px;
+    margin-bottom: 50px;
+    width:255px;
     float:left;
     background-color:#ffce00;
     box-shadow:1px 1px 10px #000000;
-    background: -moz-linear-gradient(#efd19c, #764400); /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(#efd19c, #a5fc00); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#efd19c, #764400); /* Standard syntax */
 }
 
@@ -165,7 +178,7 @@ figure img{
  
 figure figcaption{
     text-align:center;
-    padding-bottom:10px;
+    padding-bottom:15px;
     font-family:fantasy;
     font-size: 18px;  
 }
