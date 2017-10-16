@@ -45,8 +45,7 @@ nav {
     background-color:#764707; 
     clear:both;
     margin:0;
-    font-family:
-    font-size:14px;
+    font-size:16px;
     box-shadow: 3px 3px 3px #000000;
 }
 
@@ -121,7 +120,7 @@ p#p-home{
 img#about_img{
     width:400px;
     display:block;
-    margin:80px;
+    margin:40px;
     border:5px outset tan; 
     float:right;
 }
@@ -180,6 +179,7 @@ figure figcaption{
     text-align:center;
     padding-bottom:15px;
     font-family:fantasy;
+    color:#ffe4b3;
     font-size: 18px;  
 }
 
@@ -187,12 +187,12 @@ figure figcaption{
 
 form{
     float: left;
+    margin-left: 10px;
 }
 
 h2#h2-contact{
     width:100%;
     float:left;
-    
     margin-left: 10px;
 }
 form#form-contact{
@@ -208,6 +208,7 @@ form input{
 button#button-contact{
     width: 80px;
     height: 40px;
+    margin-left: 370px;
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 15px;
