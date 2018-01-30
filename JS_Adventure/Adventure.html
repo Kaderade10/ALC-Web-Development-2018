@@ -9,10 +9,44 @@
         <script>
             Start();
             
+            var inventory = {
+                coins:100,
+                rubyBoots:0,
+                apples:0,
+                goldenKey:0,
+                heart:0,
+                brain:0,
+                courage:0,
+                sword:0,
+            }
+            
+            var player = {
+                firstname:"",
+                lastname:"",
+                gender:"",
+                age:"",
+                health:100,
+                score:0,
+                
+            }
+            
+            var flyingmonkey = {
+                descriptioin:"A monkey with wings trying to attack me",
+                damage:10,
+                health:30,
+            }
+            
+            Start();
+            
             function Start(){
-                var playerName = prompt("What is your name adventurous?", "Bub");
+                player.firstname = prompt("What is your first name adventurous?", "Bub");
                 alert("Welcome to the land of OZ, "+ playerName );
-                var BeginAdv = confirm("Are you ready to begin your adventure?");
+                player.lastname = confirm("What is your last name?");
+                player.gender = prompt("gender?");
+                player.age = prompt("how old are you?");
+                
+                
+                alert("Welcome to the land of OZ, " + player.firstname + + " " + player.lastname +"\n"+ player.age);
                 
                 if(BeginAdv){
                     Village();
@@ -26,21 +60,32 @@
                 var village = prompt("You arrive at munchkin village. there are little people about their business. You see a blacksmith, inn, candyshop, and a yellow brick road").toLowerCase();
                 
                 if(village == "blacksmith" || village == "go to blacksmith"){
-                    alert("the little bearded blacksmith gives you a crusty look and goes back to work, ignoring your presence.");
-                    Village();
+                    
+                    var blacksmith = prompt("the little bearded blacksmith gives you a crusty look and says what can I do for you? \np -Buy Sword").toLocaleLowerCase();
+                    
+                    if(blacksmtih == "buy sword" && inventory.coins == 100){
+                        inventory.coins = inventory.coins - 100;
+                        inventory.sword = 1;
+                        alert("You've bought a sword! \np Swords = " + inventory.sword + "\n Coins = " + inventory.coins);
                 }
-                else if(village=="inn" || village=="go to inn"){
+                else{
+                    Alert("You do not have enough moola! Go away!");
+                }
+                Village();
+                    
+                    }
+                else if(village == "inn" || village == "go to inn"){
                     alert("you enter the inn and the innkeeper says 'What can I do for you? A room, food , a sit by the hearth fire?");
                     Village();
                 }
-                else if(village =="candyshop" || village == "go to the candyshop"){
+                else if(village == "candyshop" || village == "go to the candyshop"){
                     alert("There is a sign attached to the door that says 'Out to lunch, will be back at soon");
                     Village();
                 }
                 else if(village == "yellow brick road" || village == "take yellow brick road"){
                 
                     YBR();
-            }
+                }
                 else{
                     alert("I don't understand " + village);
                     Village();
@@ -69,30 +114,7 @@
                             }
                         }
                     }
-                function BS(){
-                var bs = prompt("You ask the BlackSmith if he can help you? He ignores you. You ask him if he wants some diamonds?").toLowerCase();   
-                
-                if(bs == "talk" || bs == "talk with blacksmith"){
-                    alert("The blacksmith now looks excited and interested in helping you.");
-                    
-                    var blacksmith = prompt("He asks what you like to make for you? a sword or a shield? 1 items costs 1 diamond each.");
-                    
-                    switch(blacksnith){
-                        case "sword":
-                            alert("The blacksmith makes you a sword. You give him 1 diamond in return.");
-                            break;
-                            case "shield":
-                                alert("The blacksmith makes you a shield. You give him 1 diamond in return.");
-                            break;
-                        default:
-                            alert("I can't do that");
-                            
-                            YBR();
-                            
-                            }
-                        }
-                    }
-                }
+            
             
         </script>
     </body>
