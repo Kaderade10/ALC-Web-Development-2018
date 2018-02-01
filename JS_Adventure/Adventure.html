@@ -1,121 +1,137 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Adventure Game</title>
+        <title>Javascript Adventure Game</title>
     </head>
     <body>
         <h1>Adventure Game v0.1</h1>
-        <p>By: Kade Randolph</p>
+        <p>By Kade Randolph</p>
         <script>
-            Start();
+            
             
             var inventory = {
-                coins:100,
-                rubyBoots:0,
-                apples:0,
-                goldenKey:0,
-                heart:0,
-                brain:0,
-                courage:0,
-                sword:0,
+                lantern:0,
+                water:0,
+                key:0,
+                
             }
             
             var player = {
                 firstname:"",
                 lastname:"",
-                gender:"",
                 age:"",
-                health:100,
-                score:0,
-                
             }
             
-            var flyingmonkey = {
-                descriptioin:"A monkey with wings trying to attack me",
-                damage:10,
-                health:30,
-            }
-            
+//            var flyingmonkey = {
+//                description:"",
+//                damage:0,
+//                health:0,
+//            }
             Start();
             
             function Start(){
-                player.firstname = prompt("What is your first name adventurous?", "Bub");
-                alert("Welcome to the land of OZ, "+ playerName );
-                player.lastname = confirm("What is your last name?");
-                player.gender = prompt("gender?");
-                player.age = prompt("how old are you?");
+                player.firstname = prompt("What's your first name?");
+                player.lastname = prompt("What's your last name?");
+                player.age = prompt("What's your age?")
+                alert("Welcome, "+player.firstname+" "+player.age+" "+player.lastname+"." );
+                var beginAdv = confirm("Are you ready to begin?")
                 
-                
-                alert("Welcome to the land of OZ, " + player.firstname + + " " + player.lastname +"\n"+ player.age);
-                
-                if(BeginAdv){
-                    Village();
+                if(beginAdv){
+                    DarkRoom();
                 }
                 else{
-                    alert("you have no guts!!! Good day Sir! or Ma'am");
+                    alert("Come back when you're ready, coward!");
                 }
             }
             
-            function Village(){
-                var village = prompt("You arrive at munchkin village. there are little people about their business. You see a blacksmith, inn, candyshop, and a yellow brick road").toLowerCase();
+            function DarkRoom(){
+                var darkRoom = prompt("You look around. You're laying on the ground in what it looks like a small, dark room. You don't know how you got here. You feel a small key in your pocket. You can see a dim light coming from a slightley cracked open door. You see a small box in the corner of the room from the light of the crack of the door.").toLowerCase();
                 
-                if(village == "blacksmith" || village == "go to blacksmith"){
-                    
-                    var blacksmith = prompt("the little bearded blacksmith gives you a crusty look and says what can I do for you? \np -Buy Sword").toLocaleLowerCase();
-                    
-                    if(blacksmtih == "buy sword" && inventory.coins == 100){
-                        inventory.coins = inventory.coins - 100;
-                        inventory.sword = 1;
-                        alert("You've bought a sword! \np Swords = " + inventory.sword + "\n Coins = " + inventory.coins);
+                if(darkRoom == "go to door" || darkRoom == "door"){
+                    alert(".");
+                    Door();
+                }
+                else if(darkRoom == "open door"){
+                    Door();
+                }
+                else if(darkRoom == "open box" || darkRoom == "box"){
+                    alert("This box needs a big key to be opened");
+                    Window();
                 }
                 else{
-                    Alert("You do not have enough moola! Go away!");
+                    alert("I don't understand "+ darkRoom);
+                    DarkRoom();
                 }
-                Village();
-                    
-                    }
-                else if(village == "inn" || village == "go to inn"){
-                    alert("you enter the inn and the innkeeper says 'What can I do for you? A room, food , a sit by the hearth fire?");
-                    Village();
-                }
-                else if(village == "candyshop" || village == "go to the candyshop"){
-                    alert("There is a sign attached to the door that says 'Out to lunch, will be back at soon");
-                    Village();
-                }
-                else if(village == "yellow brick road" || village == "take yellow brick road"){
+            }
+            
+//            function YBR(){
+//                var ybr = prompt("You begin to follow the yellow brick road. It goes on for a mile or so before you notice a scarecrow beside a corn field. The scarecrow has a very sad look on it's face. Do you stop to talk or move on?").toLowerCase();
+//                
+//                if(ybr == "talk to scarecrow" || ybr == "talk with scarecrow" || ybr == "talk to scarecrow" || ybr == "stop to talk" || ybr == "stop to talk to scarecrow"){
+//                    alert("The scarecrow moves suddenly as if startled. He looks around to see who is talking to him.");
+//                    
+//                    var scarecrow = prompt("He doesn't seem to notice you down below. He is hung upon a stake ten feet up in the air. How will you get his attention, yell or throw rocks?");
+//                    
+//                    switch(scarecrow){
+//                        case "yell":
+//                            alert("The scarecrow says, 'Who's yelling at me?' You say, 'Down here Mr. Scarecrow!' He looks down and says, 'Oh! I didn't see you there!'");
+//                        break;
+//                        case "throw rocks":
+//                            alert("The scarecrow wakes alarmed and scared. 'Hey! Who did that?' mumbles the scarecrow. You wave to get his attention. He says 'Who throws rocks at a sleeping person?!");
+//                        break;
+//                        default:
+//                            alert("I don't understand "+ scarecrow);
+//                            
+//                            YBR();
+//                                
+//                    }
+//                }
+//            }
+            
+            function Door(){
+                var door = prompt("You quitley open the door. To your left you see a long dark hallway, to your right you see a dim light in the distance of the hallway. It is very dark and difficult to see.").toLowerCase();
                 
-                    YBR();
+                if(door == "go left" || door == "left"){
+                    alert("You go left. You follow the hallway until you reach a door.");
+                    Room();
+                }
+                else if( door == "go right" || door == "right"){
+                    alert("You go right. You follow the hallway until you reach an open room.");
+                    Room();
                 }
                 else{
-                    alert("I don't understand " + village);
-                    Village();
+                    alert("Sorry. I don't know what '"+door+"' means.");
+                    Door();
+                }
                 }
             
-            function YBR(){
-                var ybr = prompt("You begin to follow the yellow brick road it goes on for a mile or so before you reach the countryside and notice a scarecrow beside a corn field. The Scarecrow has a very sad look on his face. Do you stop to talk or move on?").toLowerCase();   
+            function Room(){
+                var room = promt("The room's door is cracked open. There is light coming from the room. You listen quietly, but you can't hear anything coming from inside the room.").toLowerCase
                 
-                if(ybr == "talk" || ybr == "talk with scarecrow"){
-                    alert("The scarecrow moves suddenly as if startled. He looks around to see who is talking to him.");
+                if(room == "go in room" || room == "go into room" || room == "go in"){
+                    alert("You push the door open and walk into the room.");
+                    BedRoom();
+                }
+                else if(room == "don't go in" || room == "dont go in" || room == "don't go" || room == "don't go in room" || room == "dont go in room" || room == "dont go into room" || room == "don't go into room"){
+                    Hallway();
                     
-                    var scarecrow = prompt("He doesn't seem to notice you down below. He is hung upon a stake ten feet up in the air. how will you get his attention, yell or throw rocks?");
-                    
-                    switch(scarecrow){
-                        case "yell":
-                            alert("The scarecrow, cries out ' who's yelling at me. ' You say down her Mr. Scarecrow! He looks down and says 'Oh, I didn't see you there");
-                            break;
-                            case "throw rocks":
-                                alert("The scarecrow wakes alarmed and scared. 'Hey who did that' mumbles the scarecrow. You wave to get his attention. He says ' how rude! Who throws rocks at someone sleeping!?");
-                            break;
-                        default:
-                            alert("I can't do that");
-                            
-                            YBR();
-                            
-                            }
-                        }
-                    }
+                }       
+                }
             
+            function LockedDoor(){
+                var room = promt("The room's door is cracked open. There is light coming from the room. You listen quietly, but you can't hear anything coming from inside the room.").toLowerCase
+                
+                if(room == "go in room" || room == "go into room" || room == "go in" || room == "go inside room" || room == "go inside"){
+                    alert("You push the door open and walk into the room.");
+                    BedRoom();
+                }
+                else if(room == "keep walking" || room == "don't go in" || room == "dont go in" || room == "don't go" || room == "dont go" || room == "don't go in room" || room == "dont go in room" || room == "dont go into room" || room == "don't go into room"){
+                    Hallway();
+                    
+                }       
+                }
             
         </script>
     </body>
+
 </html>
