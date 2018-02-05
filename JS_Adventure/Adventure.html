@@ -10,9 +10,11 @@
             
             
             var inventory = {
-                lantern:0,
+                flashlight:0,
                 water:0,
                 key:0,
+                toothpic:0,
+                
                 
             }
             
@@ -45,18 +47,18 @@
             }
             
             function DarkRoom(){
-                var darkRoom = prompt("You look around. You're laying on the ground in what it looks like a small, dark room. You don't know how you got here. You feel a small key in your pocket. You can see a dim light coming from a slightley cracked open door. You see a small box in the corner of the room from the light of the crack of the door.").toLowerCase();
+                var darkRoom = prompt("You look around. You're laying on the ground in what it looks like a small, dark room. You don't know how you got here. You can see a dim light coming from a slightley cracked open door. You see a small box in the corner of the room from the light of the crack of the door.").toLowerCase();
                 
                 if(darkRoom == "go to door" || darkRoom == "door"){
                     alert(".");
-                    Door();
+                    Hallway();
                 }
                 else if(darkRoom == "open door"){
-                    Door();
+                    Hallway();
                 }
                 else if(darkRoom == "open box" || darkRoom == "box"){
-                    alert("This box needs a big key to be opened");
-                    Window();
+                    alert("This box needs a small key to be opened");
+                    Box();
                 }
                 else{
                     alert("I don't understand "+ darkRoom);
@@ -88,28 +90,28 @@
 //                }
 //            }
             
-            function Door(){
-                var door = prompt("You quitley open the door. To your left you see a long dark hallway, to your right you see a dim light in the distance of the hallway. It is very dark and difficult to see.").toLowerCase();
+            function Hallway(){
+                var hallway = prompt("You quitley open the door. To your left you see a long dark hallway, to your right you see a dim light over an open room in the distance of the hallway. It is very dark and difficult to see.").toLowerCase();
                 
-                if(door == "go left" || door == "left"){
+                if(hallway == "go left" || hallway == "left" || hallway == "dark hallway"){
                     alert("You go left. You follow the hallway until you reach a door.");
-                    Room();
+                    LockedDoor();
                 }
-                else if( door == "go right" || door == "right"){
+                else if( hallway == "go right" || hallway == "right" || hallway == "open room"){
                     alert("You go right. You follow the hallway until you reach an open room.");
-                    Room();
+                    OpenRoom();
                 }
                 else{
-                    alert("Sorry. I don't know what '"+door+"' means.");
-                    Door();
+                    alert("Sorry. I don't understand " + hallway);
+                    hallway();
                 }
                 }
             
-            function Room(){
-                var room = promt("The room's door is cracked open. There is light coming from the room. You listen quietly, but you can't hear anything coming from inside the room.").toLowerCase
+            function openRoom(){
+                var openroom = promt("You slowly walk into the open room with silent foot steps. You listen carefully and you can hear a continous tick. with very little light you can see a table with objects on it.").toLowerCase
                 
-                if(room == "go in room" || room == "go into room" || room == "go in"){
-                    alert("You push the door open and walk into the room.");
+                if(room == "table" || room == "go to table" || room == "pick up objects"){
+                    alert("You go to the table and you see a flashlight and a toothepick.");
                     BedRoom();
                 }
                 else if(room == "don't go in" || room == "dont go in" || room == "don't go" || room == "don't go in room" || room == "dont go in room" || room == "dont go into room" || room == "don't go into room"){
@@ -117,6 +119,7 @@
                     
                 }       
                 }
+            
             
             function LockedDoor(){
                 var room = promt("The room's door is cracked open. There is light coming from the room. You listen quietly, but you can't hear anything coming from inside the room.").toLowerCase
