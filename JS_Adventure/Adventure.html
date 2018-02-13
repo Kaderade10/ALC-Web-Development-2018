@@ -42,7 +42,7 @@
             
            
             function DarkRoom(){
-                var darkRoom = prompt("You wake up in a dark room. You move to get up and feel a sharp pain in your arm. It is bleeding very badly from a cut and you need to find a way to stop it. You look around the room, you see a window, a door, and a scarf hanging on the door handle.").toLowerCase();
+                var darkRoom = prompt("You wake up in a dark room. You move to get up and feel a sharp pain in your arm. It is bleeding very badly from a cut and you need to find a way to stop it. You look around the room, you see a window, a door, a rope on the ground and a scarf hanging on the door handle.").toLowerCase();
                 
                 if(darkRoom == "go to door" || darkRoom == "door" || darkRoom == "go to the door"){
                     alert("You slowly open the door.");
@@ -72,6 +72,7 @@
                 }
             }
             
+            
             function Door(){
                 var door = prompt("You open the door quietly and look out into the dark hallway. It is too dark to see anything to your left. To your right you see a dim light over a door at the end of the hall. Which way do you want to go?").toLowerCase();
                 
@@ -80,7 +81,7 @@
                     LeftRoom();
                 }
                 else if( door == "go right" || door == "right" || door == "go to the right" || door == "go to light" || door == "right door"){
-                    alert("You go right. You follow the hallway until you reach a room off to your right.");
+                    alert("You go right. You follow the hallway until you reach the light and you see the door. You can hear a ugly sound in the room. You slowly open the door and you see a big angry orc in the room eating a rat. He doesn't see you and you see a sword on the table behind him.");
                     RightRoom();
                 }
                 else if(door == "inventory"){
@@ -92,19 +93,19 @@
                     Door();
                 }
             }
-           
-            function LeftRoom(){
-                var leftroom = prompt("You make your way down the dark hallway. At the end of the hallway you find a door that is cracked open. To your right there is another door with an exit sign above it.").toLowerCase();
+            
+             function RighttRoom(){
+                var rightroom = prompt("Will you brave up and kill him with the sword, or be a coward and walk away?").toLowerCase();
                 
-                if(leftroom == "go in room" || leftroom == "go in the room" || leftroom == "go into the room" || leftroom == "go into room" || leftroom == "go in" || leftroom == "go inside room" || leftroom == "go inside the room" || leftroom == "go inside"){
-                    alert("You push the door open and go inside the room.");
-                    BedRoom();
+                if(rightroom == "kill" || rightroom == "kill orc with sword" || rightroom == "sword" || rightroom == "kill him" || rightroom == "be brave" || rightroom == "brave up" || rightroom == "sword" || rightroom == "kill the orc"){
+                    alert("You sneakily go and grab the sword behind the orc. Right before you raise the sword above his head to kill it you see another orc walking into the room with a sword. He sees you. you quickly kill the orc eating the rat and you are now in a duel with the other orc.");
+                    Duel();
                 }
                 
-                 if(exitdoor == "open door" || leftroom == "exit door" || leftroom == "exit" || leftroom == "right door" || leftroom == "go right"){
+                 if(rightroom == "open door" || leftroom == "exit door" || leftroom == "exit" || leftroom == "right door" || leftroom == "go right"){
                     alert("The go to open the exit door.");
                     ExitDoor();
-                
+                 }
                 else if(leftroom == "keep walking" || leftroom == "don't go in" || leftroom == "dont go in" || leftroom == "don't go" || leftroom == "dont go" || leftroom == "don't go in room"){
                     LeftHallway();
                     
@@ -125,6 +126,41 @@
                 }
             }
             
+           
+            function LeftRoom(){
+                var leftroom = prompt("You make your way down the dark hallway. At the end of the hallway you find a door that is cracked open. To your right there is another door with an exit sign above it.").toLowerCase();
+                
+                if(leftroom == "go in room" || leftroom == "go in the room" || leftroom == "go into the room" || leftroom == "go into room" || leftroom == "go in" || leftroom == "go inside room" || leftroom == "go inside the room" || leftroom == "go inside"){
+                    alert("You push the door open and go inside the room.");
+                    BedRoom();
+                }
+                
+                 if(rightroom == "open door" || leftroom == "exit door" || leftroom == "exit" || leftroom == "right door" || leftroom == "go right"){
+                    alert("The go to open the exit door.");
+                    ExitDoor();
+                 }
+                else if(leftroom == "keep walking" || leftroom == "don't go in" || leftroom == "dont go in" || leftroom == "don't go" || leftroom == "dont go" || leftroom == "don't go in room"){
+                    LeftHallway();
+                    
+                }
+                else if(leftroom == "inventory"){
+                    alert(inventory);
+                    LeftRoom();
+                }
+                else if(leftroom == "dark room" || leftroom == "go to dark room"){
+                    DarkRoom();
+                }
+                else if(leftroom == "hallway" || leftroom == "go to hallway"){
+                    LeftHallway();
+                }
+                else{
+                    alert("I don't understand '"+leftroom+"'");
+                    LeftRoom();
+                }
+            }
+            
+            
+            
             function ExitDoor(){
             var exitdoor = prompt("The exit door is locked and needs a key to be opened").toLowerCase();
             
@@ -144,10 +180,10 @@
             }
            
             function BedRoom(){
-                var bedroom = prompt("In the corner of the Room, there is a lamp. There is a bed in the Room, and beside the bed, there is a nightstand. The nightstand has drawers. You remember this place. You've been here before.").toLowerCase();
+                var bedroom = prompt("In the room you see an open window").toLowerCase();
                 
-                if(bedroom == "go to nightstand" || bedroom == "nightstand"){
-                    alert("You walk to the nightstand.");
+                if(bedroom == "go to window" || bedroom == "window"){
+                    alert("You go to the window and look out of it. there is a balcony and 15 ft below are emergency stairs. You cannot jump to it or you will fall off the 50 ft drop to the ground.");
                     Nightstand();
                 }
                 else if(bedroom == "inventory"){
@@ -162,6 +198,7 @@
                     BedRoom();
                 }
             }
+            
           
             
         </script>
