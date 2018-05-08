@@ -115,3 +115,22 @@ nav ul li a:hover{
     background-color:#EDEDED;
     width:20%;
 }
+container {
+    
+}
+
+h2 {
+    padding:20px;
+    text-align: center;
+    color:#7DC8CC;
+    font-size:30px;
+}
+
+p{
+    color:#60767A;
+}
+
+footer {
+    color:#60767A;
+    text-align:center;
+}
